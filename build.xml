@@ -1,0 +1,19 @@
+<project name="OCP Build File" basedir=".">
+	
+	<target name="compile">
+		<echo message="file to compile = ${p}/${f}.java"/>
+		<mkdir dir="./bin"/>
+		<javac srcdir="." destdir="./bin" includes="${p}/${f}.java"/>
+	</target>
+	
+	<target name="execute" depends="compile">
+		<java classname="${p}.${f}">
+			<classpath>
+				<pathelement location="./bin"/>
+			</classpath>
+		</java>
+	</target>
+	
+	<target name="build-all">
+	</target>
+</project>
