@@ -20,9 +20,17 @@ public class Duck implements Comparable<Duck>{
 		return this.name.compareTo(duck.name);
 	}
 	
+	public String getName(){
+		return name;
+	}
+	
+	public int getWeight(){
+		return weight;
+	}
+	
 	@Override
 	public String toString(){
-		return name;
+		return name + " " + weight;
 	}
 	
 	public static void main(String... args){
